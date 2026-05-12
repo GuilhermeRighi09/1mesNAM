@@ -1,0 +1,210 @@
+:root {
+    --lilac-light: #F8F4FF;
+    --lilac-soft: #DDD6FE;
+    --lilac-main: #9333EA;
+    --purple-deep: #581C87;
+    --text-color: #3B2E40;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--lilac-light);
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* MÚSICA */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--lilac-soft);
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.15);
+}
+
+.btn-circular {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: var(--lilac-main);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.btn-circular:hover { transform: scale(1.1); }
+.music-label { font-size: 0.8rem; font-weight: 600; color: var(--purple-deep); }
+
+/* CAPA (HERO) */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    border-radius: 0 0 40px 40px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.title-top {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+    color: var(--lilac-light);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.hero-content h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+}
+
+.hero-subtitle { font-size: 1.3rem; font-style: italic; opacity: 0.9; }
+
+/* CONTADOR */
+.countdown-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 15px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.countdown-text { font-size: 1.5rem; font-weight: 600; }
+
+/* CONTAINERS E ESPAÇAMENTOS (CORRIGE AS SOBREPOSIÇÕES) */
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section { padding: 60px 0; }
+
+.section-title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--purple-deep);
+    margin-bottom: 40px;
+}
+
+/* CARTINHA */
+.letter-box {
+    background: var(--white);
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(147, 51, 234, 0.08);
+    text-align: center;
+    border-left: 8px solid var(--lilac-main);
+}
+
+.letter-header { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: #888; margin-bottom: 15px; }
+.letter-box h2 { color: var(--lilac-main); font-family: 'Dancing Script', cursive; font-size: 3.5rem; margin-bottom: 25px; }
+.letter-box p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; color: var(--text-color); }
+.dedicatoria { font-size: 1.3rem; margin-top: 40px; color: var(--purple-deep); }
+
+/* CARROSSEL (Atualizado para formato retrato: mais estreito e mais alto) */
+.swiper {
+    width: 100%;
+    max-width: 550px; /* NOVO: Limita a largura para ficar com formato de telemóvel/retrato */
+    margin: 0 auto;   /* NOVO: Mantém o carrossel centrado no meio do ecrã */
+    height: 90vh;     /* NOVO: Aumentado para 90% da altura do ecrã */
+    max-height: 950px;/* NOVO: Limite de altura ainda maior */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.swiper-slide { position: relative; }
+.swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+.caption {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white; font-family: 'Dancing Script', cursive;
+    font-size: 2rem; padding: 40px 20px 20px 20px; text-align: center;
+}
+
+/* VÍDEO E FOTO LADO A LADO (Atualizado para tamanho maior) */
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.media-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(147, 51, 234, 0.1);
+    text-align: center;
+}
+
+.media-card video, .media-card img {
+    width: 100%;
+    /* height: 350px; */ /* Antigo */
+    height: 550px; /* Novo: Aumentado para vídeo e foto ficarem maiores */
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.media-card h3 { font-size: 1.6rem; color: var(--lilac-main); margin-bottom: 10px; }
+.media-card p { font-size: 1rem; opacity: 0.8; }
+
+/* RODAPÉ */
+.footer {
+    background: var(--purple-deep);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* ANIMAÇÃO */
+.fade-in { opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
+.fade-in.appear { opacity: 1; transform: translateY(0); }
+
+/* CELULAR */
+@media (max-width: 768px) {
+    .side-by-side { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .letter-box { padding: 30px 20px; }
+    /* .swiper { height: 400px; } */ /* Antigo */
+    .swiper { height: 90vh; max-height: 550px; } /* Novo: Ajuste de altura responsiva */
+    .media-card video, .media-card img { height: 400px; } /* Novo: Ajuste de altura responsiva */
+    .section { padding: 40px 0; }
+}
